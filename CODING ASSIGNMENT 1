@@ -1,0 +1,75 @@
+package assignment;
+import java.util.Scanner;
+public class HealthyLife {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		String name; 
+	    char gender='F';
+	    double weight, height, bmi, caloriesperserving, caloriesconsume,weightgain;
+	    double minweight,maxweight;
+	    int age, mealsperday, servingpermeal, activelevel,ricetype;
+	    
+	    System.out.println("WELCOME TO HEALTHY LIFE");
+	    System.out.print("Enter your name : ");
+	    name = sc.nextLine();
+	    System.out.print("Enter your gender, if female press F if male press M : ");
+	    gender = sc.next().charAt(0);
+	    System.out.print("Enter your age: ");
+	    age = sc.nextInt();
+	    System.out.print("Enter your height in m : ");
+	    height = sc.nextDouble();
+	    System.out.print("Enter your weight in kg: ");
+	    weight = sc.nextDouble();
+	    
+	    System.out.println();
+	    System.out.print("Enter your type of rice consume"
+	    		+ "\n1.White Rice"
+	    		+ "\n2.Brown Rice"
+	    		+ "\n3.Purple Rice"
+	    		+ "\n4.Black Rice"
+	    		+ "\n5.Red Rice"
+	    		+ "\nChoose a number: ");
+	    ricetype = sc.nextInt();
+	    System.out.println();
+	    System.out.print("Enter your meals per day that you eat rice: ");
+	    mealsperday = sc.nextInt();
+	    System.out.print("Enter how many serving of rice you eat per meal : ");
+	    servingpermeal = sc.nextInt();
+	    System.out.print("Enter how many calories in one serving of your rice: ");
+	    caloriesperserving = sc.nextDouble();
+	    
+	    System.out.println();
+	    System.out.print("How active are you"
+	    		+ "\n1.Not active"
+	    		+ "\n2.Moderate"
+	    		+ "\n3.Active"
+	    		+ "\nChoose a number: ");
+	    activelevel = sc.nextInt();
+	     
+	    System.out.println();
+	    bmi = weight/Math.pow(height,2);
+	    System.out.printf("Your bmi is : %.2f",bmi);
+	    
+	    minweight = (18.5)*Math.pow(height,2);
+	    maxweight = (25.0)*Math.pow(height,2);
+	    
+	    System.out.printf("%nHealthy weight for the height : %.2fkg - %.2fkg",minweight,maxweight);
+	    
+	    caloriesconsume = caloriesperserving*servingpermeal*mealsperday;
+	    System.out.printf("%nYour calories of rice consume per day is : %.2f",caloriesconsume);
+	    System.out.println();
+	    
+	    System.out.print("\n7700 calories equal to 1 kg");	    
+	    weightgain = caloriesconsume/7700;
+	    System.out.printf("%nweight gain if no calories burn : %.2f%n",weightgain);	    
+	    System.out.println("30 minutes of running can burn 200 to 500 calories");
+	    
+	    System.out.println();
+	    System.out.println("Thank you for using HealthyLife, have a good day!");
+
+	}
+
+}
